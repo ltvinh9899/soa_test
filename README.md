@@ -8,8 +8,6 @@ RESTful API for Product Management
 - PostgreSQL  
 - Docker, docker-compose  
 
-## Setup
-
 ## Setup with Docker Compose
 
 ### 1. Clone the repository
@@ -18,13 +16,13 @@ cd soa_test
 
 ### 2. Create envỉonment variables (.env)
 
-```PORT=8080
-DB_HOST=db
-DB_PORT=5432
-DB_USER=postgres
-DB_PASS=postgres
-DB_NAME=online_store
-JWT_SECRET=your_jwt_secret```
+PORT=8080··
+DB_HOST=db··
+DB_PORT=5432··
+DB_USER=postgres··
+DB_PASS=postgres··
+DB_NAME=online_store··
+JWT_SECRET=your_jwt_secret··
 
 ### 3. Build and start containers
 docker-compose up --build -d
@@ -53,4 +51,4 @@ DELETE	/api/products/{id}	Delete product	Admin
 
 Dashboard
 Method	Endpoint	Description	Access
-GET	/api/dashboard	Category stats	Admin```
+GET	/api/dashboard	Category stats	Admin
