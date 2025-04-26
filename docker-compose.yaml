@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_USER: exampleuser
+      POSTGRES_PASSWORD: examplepass
+      POSTGRES_DB: exampledb
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: exampleuser
+      DB_PASS: examplepass
+      DB_NAME: exampledb
+      DB_PORT: "5432"
+      PORT: "8080"
+      JWT_SECRET: your_jwt_secret
+    ports:
+      - "8081:8080"
+    links:
+      - db
+
+volumes:
+  db_data:
