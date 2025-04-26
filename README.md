@@ -18,13 +18,13 @@ cd soa_test
 
 ### 2. Create envỉonment variables (.env)
 
-PORT=8080
+```PORT=8080
 DB_HOST=db
 DB_PORT=5432
 DB_USER=postgres
 DB_PASS=postgres
 DB_NAME=online_store
-JWT_SECRET=your_jwt_secret
+JWT_SECRET=your_jwt_secret```
 
 ### 3. Build and start containers
 docker-compose up --build -d
@@ -38,7 +38,7 @@ INSERT INTO categories (name, description, created_at, updated_at) VALUES
 ('Monitors', 'Computer displays', NOW(), NOW());
 
 ### API Documentation
-Authentication
+```Authentication
 Method	Endpoint	Description	Access
 POST	api/user/login	User login	Public
 POST	api/user/register	User registration	Public
@@ -53,4 +53,4 @@ DELETE	/api/products/{id}	Delete product	Admin
 
 Dashboard
 Method	Endpoint	Description	Access
-GET	/api/dashboard	Category stats	Admin
+GET	/api/dashboard	Category stats	Admin```
